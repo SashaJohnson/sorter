@@ -1,7 +1,8 @@
 class Sorter {
-  constructor(elements = []) { 
+  constructor(elements = [], comparator) { 
     
     this.elements = elements;
+    this.comparator = comparator;
     
   }
 
@@ -39,21 +40,26 @@ class Sorter {
         
     }    
     
-    var sorted = toSort.sort();
+    var sorted = toSort.sort(this.comparator);
+    
+    indices.sort(function(left, right) {return left - right});
     
     for (var i =0; i < indices.length; i++)  {
         
         this.elements[indices[i]] = sorted[i]; 
-        
+     
     }
     
+  }
+  
+  setComparator(compareFunction) {
+   
+   this.comparator = compareFunction;
+    
+    }    
     
   }
 
-
-  setComparator(compareFunction) {
-    // your implementation
-  }
-}
+  
 
 module.exports = Sorter;
