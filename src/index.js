@@ -17,7 +17,7 @@ class Sorter {
    
   }
 
-  length() {
+ get length() {
     
     return this.elements.length;
     
@@ -31,7 +31,7 @@ class Sorter {
 
   sort(indices) {
       
-    toSort = [];
+    var toSort = [];
     
     for (var i =0; i < indices.length; i++) {
     
@@ -39,7 +39,7 @@ class Sorter {
         
     }    
     
-    sorted = toSort.sort();
+    var sorted = toSort.sort();
     
     for (var i =0; i < indices.length; i++)  {
         
