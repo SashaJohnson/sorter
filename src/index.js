@@ -30,11 +30,26 @@ class Sorter {
   }
 
   sort(indices) {
+      
+    toSort = [];
     
+    for (var i =0; i < indices.length; i++) {
     
+        toSort.push(this.elements[indices[i]]); 
+        
+    }    
+    
+    sorted = toSort.sort();
+    
+    for (var i =0; i < indices.length; i++)  {
+        
+        this.elements[indices[i]] = sorted[i]; 
+        
+    }
     
     
   }
+
 
   setComparator(compareFunction) {
     // your implementation
