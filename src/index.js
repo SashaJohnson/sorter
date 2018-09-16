@@ -1,5 +1,5 @@
 class Sorter {
-  constructor(elements = [], comparator) { 
+  constructor(elements = [], comparator = function(a,b) { return a - b; }) { 
     
     this.elements = elements;
     this.comparator = comparator;
@@ -42,7 +42,7 @@ class Sorter {
     
     var sorted = toSort.sort(this.comparator);
     
-    indices.sort(function(left, right) {return left - right});
+    indices.sort(function(left, right) { return left - right });
     
     for (var i =0; i < indices.length; i++)  {
         
